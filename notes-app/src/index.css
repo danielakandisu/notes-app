@@ -1,0 +1,74 @@
+body {
+    background-color: #1e1e1e;
+    color: white;
+}
+
+.note-card {
+    text-align: center;
+    border: 2px solid black;
+    padding: 20px;
+    border-radius: 10px;
+    width: 15.625rem;
+    background-color: rgb(144, 96, 24);
+  }
+
+
+
+.note-form {
+
+  display: flex;
+  justify-content: center;
+  margin-top: 2rem;
+  gap: 1rem;
+  border-radius: 30px;
+ animation: fadeIn 0.4s ease-out forwards;
+
+
+  
+
+
+}
+
+.note-list {
+
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  max-width: 50rem;
+  margin: 3rem auto 0 auto;
+  flex-wrap: wrap;
+  background-color: #252525;
+  border: 1px solid #404040;
+  border-radius: 12px;
+  padding: 2rem;
+  animation: fadeIn 0.4s ease-out forwards;
+
+}
+
+.edit-input {
+
+  display: block;
+  text-align: center;
+}
+
+.edit-body {
+  margin-top: 1em;
+  display: block;
+  text-align: center;
+}
+
+.save-btn {
+  display: block;
+  margin: 0 auto;
+  
+}
+
+.search-filter {
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2rem;
+  
+  
+}
