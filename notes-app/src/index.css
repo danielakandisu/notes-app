@@ -58,7 +58,7 @@ body {
 }
 
 .save-btn {
-  display: block;
+  display: flex;
   margin: 0 auto;
   
 }
@@ -71,4 +71,18 @@ body {
   margin-top: 2rem;
   
   
+}
+
+.note-header {
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.star-btn {
+
+    cursor: pointer;
+    border: none;
+    background: none;
 }

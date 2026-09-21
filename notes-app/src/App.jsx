@@ -1,8 +1,8 @@
 import React from "react"
-import NoteForm from "../../components/noteForm"
-import NoteList from "../../components/noteList"
+import NoteForm from "./components/noteForm"
+import NoteList from "./components/noteList"
 import { useState } from "react"
-import SearchBar from "../../components/searchBar"
+import SearchBar from "./components/searchBar"
 
 export default function App(){
 
@@ -35,6 +35,16 @@ export default function App(){
       )
     }
 
+    function favorite(id){
+
+      setNotes(prevNotes => prevNotes.map((note) => {
+          return note.id === id
+          ? {...note, isFavorite: !note.isFavorite}:
+          note
+
+      }))
+    }
+
 
 
     
@@ -48,7 +58,7 @@ export default function App(){
 
         <NoteForm addNote={addNote} />
 
-        <NoteList editNote={editNote} deleteNote={deleteNote} notes={filteredNotes} />
+        <NoteList editNote={editNote} deleteNote={deleteNote} notes={filteredNotes} favorite={favorite} />
 
 
       </>
