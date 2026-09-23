@@ -3,12 +3,16 @@ import NoteForm from "./components/noteForm"
 import NoteList from "./components/noteList"
 import { useState } from "react"
 import SearchBar from "./components/searchBar"
+import FavoriteBtn from "./favoriteBtn"
+import { ReceiptPoundSterling } from "lucide-react"
 
 export default function App(){
 
     const [notes,setNotes] = React.useState([])
 
     const [searchItem, setSearchItem] = useState('')
+
+    const [showFav, setShowFav] = useState(false)
 
     const filteredNotes = notes.filter((note) => {
 
@@ -37,7 +41,8 @@ export default function App(){
 
     function favorite(id){
 
-      setNotes(prevNotes => prevNotes.map((note) => {
+      setNotes(prevNotes => 
+        prevNotes.map((note) => {
           return note.id === id
           ? {...note, isFavorite: !note.isFavorite}:
           note
@@ -45,20 +50,39 @@ export default function App(){
       }))
     }
 
+    const filteredFavoriteNote = notes.filter(note =>  note.isFavorite)
 
+    function showFavNotes(){
+
+      setShowFav(fav => !fav)
+    
+    }
 
     
     return (
       <>
-        <SearchBar 
+    <div className="header">
+          <SearchBar 
           searchItem={searchItem}
 
           setSearchItem={setSearchItem}
         />
 
+        <FavoriteBtn
+
+        showFavNotes= {showFavNotes}
+
+        />
+  </div>
+
         <NoteForm addNote={addNote} />
 
-        <NoteList editNote={editNote} deleteNote={deleteNote} notes={filteredNotes} favorite={favorite} />
+        <NoteList 
+        editNote={editNote} 
+        deleteNote={deleteNote} 
+        notes={showFav? filteredFavoriteNote:filteredNotes} 
+        favorite={favorite} 
+        />
 
 
       </>

@@ -44,11 +44,13 @@ export default function NoteCard({note, deleteNote, editNote, newestNoteRef, fav
             <div className="note-card"
             ref={newestNoteRef}
             >
-            <div className="note-header">
-                <h3>{note.title}</h3>
+            <div className="star-row">
                 <button className='star-btn' onClick={() => favorite(note.id)}>
                     <Star fill={note.isFavorite? "#FFD700" : "none" }/>
                 </button>
+            </div>
+            <div className="note-header">
+                <h3>{note.title}</h3>
             </div>
                 <p>{note.body}</p>
                 <button onClick={() => setIsEditing(true) }>Edit</button>

@@ -3,6 +3,16 @@ body {
     color: white;
 }
 
+.header {
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 5rem;
+  margin-top: 2rem;
+}
+
 .note-card {
     text-align: center;
     border: 2px solid black;
@@ -63,21 +73,13 @@ body {
   
 }
 
-.search-filter {
 
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-top: 2rem;
-  
-  
-}
 
 .note-header {
 
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
 }
 
 .star-btn {
@@ -85,4 +87,13 @@ body {
     cursor: pointer;
     border: none;
     background: none;
+    
 }
+
+.star-row {
+
+  display: flex;
+  width: 100%;
+  justify-content: flex-end;
+}
+

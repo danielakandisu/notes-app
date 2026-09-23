@@ -83,7 +83,9 @@ export default function NoteForm({addNote}){
                 placeholder="Write your note"
                 value={body}
                 onChange={(event) => setBody(event.target.value)}
+                maxLength={30}
             />
+                <p>{body.length} / 30</p>
             <button >Add Note</button> 
         </form>
     )
