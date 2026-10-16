@@ -1,7 +1,7 @@
 import React from "react";
 import NoteCard from "./noteCard";
 
-export default function NoteList({notes, deleteNote, editNote, favorite}){
+export default function NoteList({notes, setNoteToDelete, editNote, favorite, toggleArchiveNotes}){
 
 const newestNoteRef = React.useRef(null)
 
@@ -26,9 +26,10 @@ const newestNoteRef = React.useRef(null)
                     } 
                     key={note.id}
                     note={note}
-                    deleteNote={deleteNote}
+                    setNoteToDelete={setNoteToDelete}
                     editNote={editNote}
                     favorite={favorite}
+                    toggleArchiveNotes={toggleArchiveNotes}
                 />
             )
         })}

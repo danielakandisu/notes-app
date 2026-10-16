@@ -56,7 +56,9 @@ export default function NoteForm({addNote}){
             id:Date.now(),
             title:title,
             body:body,
-            isFavorite:false
+            createdAt: Date.now(),
+            isFavorite:false,
+            isArchive: false
         })
         setError('')
         setTitle('')
@@ -72,20 +74,24 @@ export default function NoteForm({addNote}){
         className="note-form"
         onSubmit={handleSubmit}>
         {(error) && <p className='error'style={{color: 'red'}}>{error}</p>}
+        <label htmlFor="title">title</label>
          <input 
+                id="title"
                 ref={inputRef}
                 type="text"
                 placeholder="Title"
                 value={title}
                 onChange={(event)=> setTitle(event.target.value)}
             />
+            <label htmlFor="body">body</label>
             <textarea
+                id="body"
                 placeholder="Write your note"
                 value={body}
                 onChange={(event) => setBody(event.target.value)}
                 maxLength={30}
             />
-                <p>{body.length} / 30</p>
+                {body.length > 0?<p className="word-count">{body.length} / 50</p>:null}
             <button >Add Note</button> 
         </form>
     )
